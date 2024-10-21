@@ -1,0 +1,44 @@
+version: '3'
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres_password
+      POSTGRES_DB: user_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - /home/vagrant/microservices-api/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  user_service:
+    build: ./user_service
+    ports:
+      - "5000:5000"
+    environment:
+      - DATABASE_URL=postgresql://myapp_user:jcruz06@db:5432/user_db
+    depends_on:
+      - db
+
+  product_service:
+    build: ./product_service
+    ports:
+      - "5001:5001"
+    environment:
+      - DATABASE_URL=postgresql://myapp_user:jcruz06@db:5432/product_db
+    depends_on:
+      - db
+
+  order_service:
+    build: ./order_service
+    ports:
+      - "5002:5002"
+    environment:
+      - DATABASE_URL=postgresql://myapp_user:jcruz06@db:5432/order_db
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
+
