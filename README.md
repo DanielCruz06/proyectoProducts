@@ -46,6 +46,24 @@ El proyecto se compone de los siguientes microservicios:
 4. **Base de Datos**: Utiliza PostgreSQL como sistema de base de datos para todos los microservicios.
 
 ## Instalación y Configuración
+## Instalación y Configuración
+
+### Prerrequisitos
+
+Antes de iniciar la instalación, asegúrate de tener instaladas las siguientes herramientas en tu sistema:
+
+1. **Docker**: Para instalar Docker, sigue la [guía de instalación oficial](https://docs.docker.com/get-docker/) para tu sistema operativo.
+2. **Docker Compose**: Instala Docker Compose siguiendo esta [guía oficial](https://docs.docker.com/compose/install/).
+3. **Git**: Instala Git desde su [sitio web oficial](https://git-scm.com/) si aún no lo tienes instalado.
+
+### Clonar el Repositorio
+
+1. **Abre una terminal** y navega al directorio donde deseas clonar el repositorio.
+2. Ejecuta el siguiente comando para clonar el repositorio desde GitHub:
+
+   ```bash
+   git clone https://github.com/DanielCruz06/proyectoProducts.git
+
 
 ### Prerrequisitos
 
